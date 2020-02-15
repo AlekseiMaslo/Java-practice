@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
 
@@ -21,6 +22,20 @@ public class Main {
             System.out.println(a[100]);
         } catch (Exception e) {
             System.out.println("Outside of bound message");
+        }
+
+        //You need to create a program, which will accept a string
+        // and check if total count on characters within the string is even it should return:
+        //“String is even” If not it should return: “String is not even”
+        System.out.println("Type your word here");
+        Scanner scanner = new Scanner(System.in);
+        String type = scanner.nextLine();
+        int i = type.length();
+
+        if (i % 2 == 0) {
+            System.out.println("String is even");
+        } else {
+            System.out.println("String is not even");
         }
     }
 }
