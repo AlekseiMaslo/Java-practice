@@ -1,41 +1,36 @@
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
+//  I did NOT create this myself. I create it by finding a parts in google and split it together...
 
 public class Main {
 
     public static void main(String[] args) {
-       //Create a loop that will print numbers from 1 to 10, except number 7
-        for (int i = 1; i <= 10; i++) {
-            if (i == 7) {
-                i++;
-            }
-            System.out.println(i);
-        }
-        System.out.println("New task");
-        //Create An Array of integers from 1 to 5, Call an integer on array using index and print it.
-        int [] a = {1, 2, 3, 4, 5};
-        System.out.println(a[1]);
-
-        System.out.println("New task");
-        //Call index outside of the bound. Handle this exception printing “Outside of bound message.”
-        try {
-            System.out.println(a[100]);
-        } catch (Exception e) {
-            System.out.println("Outside of bound message");
-        }
-
-        //You need to create a program, which will accept a string
-        // and check if total count on characters within the string is even it should return:
-        //“String is even” If not it should return: “String is not even”
-        System.out.println("Type your word here");
+        // Create a method that will check if a given string is a palindrome.
+        // If it is it should print “This string is a palindrome”
+        // if not print “This string is not a palindrome”
+        String inputString;
+        System.out.println("Type your possible palindrome here");
         Scanner scanner = new Scanner(System.in);
-        String type = scanner.nextLine();
-        int i = type.length();
+        inputString = scanner.nextLine();
 
-        if (i % 2 == 0) {
-            System.out.println("String is even");
-        } else {
-            System.out.println("String is not even");
+        String inputStringWithoutSpaces = inputString.replaceAll("\\s+", "");
+        int length = inputStringWithoutSpaces.length();
+        int a = 0;
+        int b = length - 1;
+        int c = (a + b)/2;
+        int i;
+
+        for (i = 0; i <= c; i++) {
+            if (inputStringWithoutSpaces.charAt(a) == inputStringWithoutSpaces.charAt(b)) {
+                a++;
+                b--;
+            }
+            else
+                break;
         }
+        if (i == c + 1)
+            System.out.println("This string is a palindrome");
+        else
+            System.out.println("This string is not a palindrome");
     }
+
 }
