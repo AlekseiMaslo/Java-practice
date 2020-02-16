@@ -11,8 +11,10 @@ public class Main {
         System.out.println("Type your possible palindrome here");
         Scanner scanner = new Scanner(System.in);
         inputString = scanner.nextLine();
+        String inLowerCase = inputString.toLowerCase();
 
-        String inputStringWithoutSpaces = inputString.replaceAll("\\s+", "");
+        String inputStringWithoutSpaces = inLowerCase.replaceAll("[^a-z]", "");
+
         int length = inputStringWithoutSpaces.length();
         int a = 0;
         int b = length - 1;
